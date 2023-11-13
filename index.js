@@ -2,27 +2,31 @@ import bodyParser from "body-parser";
 import express from "express";
 import mongoose from 'mongoose';
 import _ from "lodash";
+import { config as configDotenv } from "dotenv";
+
+// Load environment variables from .env file
+configDotenv();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//mongoose.connect("mongodb://127.0.0.1:27017/todoListDB");
+mongoose.connect(process.env.MONGODB);
 
-const connectWithRetry = () => {
-    mongoose.connect("mongodb+srv://Meron-Michael:07448717@cluster1.lhcceb8.mongodb.net/todoListDB?retryWrites=true&w=majority")
-        .then(() => {
-            console.log('Connected to MongoDB');
-        })
-        .catch((err) => {
-            console.error('Failed to connect to MongoDB. Retrying in 5 seconds...', err);
-            setTimeout(connectWithRetry, 5000); // Retry after 5 seconds
-        });
-};
+// const connectWithRetry = () => {
+//     mongoose.connect("mongodb+srv://Meron-Michael:07448717@cluster1.lhcceb8.mongodb.net/todoListDB?retryWrites=true&w=majority")
+//         .then(() => {
+//             console.log('Connected to MongoDB');
+//         })
+//         .catch((err) => {
+//             console.error('Failed to connect to MongoDB. Retrying in 5 seconds...', err);
+//             setTimeout(connectWithRetry, 5000); // Retry after 5 seconds
+//         });
+// };
 
-connectWithRetry();
+// connectWithRetry();
 
 const todoSchema = new mongoose.Schema({
     todo: {
