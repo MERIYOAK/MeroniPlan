@@ -1,0 +1,43 @@
+
+/***intro ejs styles***/
+.intro {
+    width: 90%;
+    margin: 0 auto;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .intro p {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  .login {
+    display: inline-block;
+    background-color: #ffa500; /* Orange background color */
+    padding: 2px 8px;
+    border-radius: 4px;
+    animation: moveUpDown 3s infinite ease-in-out; /* Adjust the animation duration as needed */
+  }
+  
+  .login:nth-child(2) {
+    animation-delay: 1.5s; 
+  }
+  
+  @keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Adjust the vertical movement distance */
+    }
+    100% {
+        transform: translateY(0);
+    }
+  }
+  
+  /***intro ejs styles end***/

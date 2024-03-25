@@ -1,0 +1,10 @@
+footer {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .copyright {
+    font-size: .8rem;
+    font-style: italic;
+    font-weight: bold;
+  }

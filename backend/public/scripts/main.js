@@ -7,6 +7,14 @@ document.querySelectorAll('input[type="checkbox"][name="checkbox"]').forEach(che
     });
 });
 
+// Function to toggle the mobile menu
+function toggleMenu() {
+    var menuItem = document.querySelector('.links');
+    menuItem.classList.toggle('show-menu');
+
+}
+
+
 
 
 
