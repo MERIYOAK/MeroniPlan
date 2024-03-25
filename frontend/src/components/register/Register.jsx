@@ -70,7 +70,7 @@ function Register() {
                 localStorage.setItem('isAuthenticated', true);
                 localStorage.setItem('userId', result.id);
 
-                navigate('all_todos');
+                navigate('/all_todos');
                 window.location.reload();
             } else {
                 alert(result.message);
