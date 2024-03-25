@@ -40,7 +40,7 @@ function Log_in() {
                 localStorage.setItem('userId', result.id);
                 localStorage.setItem('todos', JSON.stringify(result.todos));
 
-                navigate('all_todos');
+                navigate('/all_todos');
                 window.location.reload();
             } else {
                 alert(result.message);
