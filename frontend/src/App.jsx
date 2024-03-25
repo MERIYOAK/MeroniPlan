@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header.jsx'
 import Intro from './components/intro/Intro.jsx'
 import Register from './components/register/Register.jsx'
