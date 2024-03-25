@@ -1,12 +1,13 @@
 import React from 'react'
 import './intro.css'
+import { Link } from 'react-router-dom'
 
 function Intro() {
     return (
         <div className="intro">
             <h2>MeroniPlan</h2>
             <p>MeroniPlan is a plan for you to plan your life.</p>
-            <i>please <a href="/register" className="login"> register </a> or <a href="/login" className="login"> login </a> to get started.</i>
+            <i>please <Link to="/register" className="login"> register </Link> or <Link to="/login" className="login"> login </Link> to get started.</i>
         </div>
     )
 }
