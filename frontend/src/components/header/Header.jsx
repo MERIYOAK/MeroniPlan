@@ -2,6 +2,7 @@ import React from 'react'
 import './header.css'
 import { MdOutlineToday, MdOutlineMenu } from "react-icons/md";
 import { FaCircleUser, FaTableList } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 function Header() {
     const imageUrl = localStorage.getItem("imageUrl") || '';
@@ -15,22 +16,23 @@ function Header() {
     return (
         <div className="nav">
             <div className="logo">
-                <a href="#">Meroni<span className="plan">Plan</span></a>
+                <Link to="/">Meroni<span className="plan">Plan</span></Link>
+
             </div>
             {localStorage.getItem("isAuthenticated") && (
                 <div className="links">
                     <div className="today">
-                        <a href="/today" className='today-link' ><MdOutlineToday /> Today</a>
+                        <Link to="/today" className='today-link' ><MdOutlineToday /> Today</Link>
                     </div>
                     <div className="all">
-                        <a href="/all_todos" className='all-link'><FaTableList /> All</a>
+                        <Link to="/all_todos" className='all-link'><FaTableList /> All</Link>
                     </div>
                 </div>
             )}
             <div className='menu' >
                 <div className='user'>
                     {imageUrl ? (
-                        <a href="/user_profile"><img src={imageUrl} alt="user" className='user-image' /></a>
+                        <Link to="/user_profile"><img src={imageUrl} alt="user" className='user-image' /></Link>
                     ) : (
                         <FaCircleUser className='user-icon' />
                     )}
