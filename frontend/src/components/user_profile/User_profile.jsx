@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import BASE_URL from '../../../config';
 
 function User_profile() {
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
     const firstName = localStorage.getItem('firstName');
     const middleName = localStorage.getItem('middleName');
     const lastName = localStorage.getItem('lastName');
@@ -39,7 +39,7 @@ function User_profile() {
                 localStorage.removeItem('userId');
                 localStorage.removeItem('todos');
 
-                Navigate("/");
+                navigate('/');
                 window.location.reload();
             } else {
                 console.error("Logout failed:", response.data.message);
